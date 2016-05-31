@@ -29,7 +29,6 @@ get '/visit' do
 end
 
 post '/visit' do
-
 	@c = Client.new params[:client]
 	if @c.save
 		erb "<h2>Thank You!!! You are complete reservation!!!</h2>"
@@ -49,6 +48,10 @@ get '/bookings' do
   erb :bookings
 end
 
+get '/client/:id' do
+	@client = Client.find(params[:id])
+	erb :client
+end
 
 
 
